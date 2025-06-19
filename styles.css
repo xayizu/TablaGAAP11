@@ -1,9 +1,9 @@
 .bg {
   animation: slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, #ffffff 50%, #a61c1c 50%);
+  background-image: linear-gradient(-60deg, #ffffff 50%, #970000 50%);
   bottom: 0;
   left: -50%;
-  opacity: .5;
+  opacity: .6;
   position: fixed;
   right: -50%;
   top: 0;
@@ -20,16 +20,36 @@
 }
 
 .content {
-  background-color: rgba(255, 255, 255, 0.92);
-  border-radius: .25em;
-  box-shadow: 0 0 0.5em rgba(166, 28, 28, 0.5);
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: .5em;
+  box-shadow: 0 0 1em rgba(255, 0, 0, 0.5);
   box-sizing: border-box;
   left: 50%;
-  padding: 10vmin;
+  padding: 5vmin;
   position: fixed;
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
+  max-width: 90vw;
+  width: 100%;
+}
+
+a.boton, .modal-botones button {
+  background-image: linear-gradient(to right, #8b0000, #300000);
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+a.boton:hover, .modal-botones button:hover {
+  background-image: linear-gradient(to right, #a61c1c, #4d0000);
+  transform: scale(1.05);
 }
 
 @keyframes slide {
