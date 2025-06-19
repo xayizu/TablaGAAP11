@@ -6,9 +6,27 @@
   <title>Acceso a Excel Online</title>
   <link rel="stylesheet" href="styles.css">
   <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .content {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      margin-top: 30px;
+      text-align: center;
+    }
     h1 {
       color: #b30000;
       margin-bottom: 20px;
+      font-size: 24px;
     }
     p.alerta {
       font-weight: bold;
@@ -17,6 +35,7 @@
       padding: 12px;
       border-radius: 5px;
       margin-bottom: 25px;
+      font-size: 16px;
     }
     ol {
       text-align: left;
@@ -24,6 +43,7 @@
       max-width: 500px;
       padding-left: 20px;
       color: #333;
+      font-size: 15px;
     }
     a.boton {
       background-color: #d62828;
@@ -32,12 +52,23 @@
       text-decoration: none;
       font-size: 18px;
       border-radius: 8px;
-      display: inline-block;
-      transition: background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
       cursor: pointer;
+      gap: 10px;
     }
     a.boton:hover {
       background-color: #a61c1c;
+      transform: scale(1.05);
+    }
+    .icono-animado {
+      animation: parpadeo 1s infinite;
+    }
+    @keyframes parpadeo {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
     .modal {
       display: none;
@@ -52,7 +83,7 @@
       background: #1e1e1e;
       color: #fff;
       border: 3px solid #ff0000;
-      margin: 10% auto;
+      margin: 10vh auto;
       padding: 30px 20px;
       width: 90%;
       max-width: 400px;
@@ -67,7 +98,7 @@
       margin-bottom: 15px;
     }
     .modal-content input {
-      width: 85%;
+      width: 90%;
       padding: 10px;
       font-size: 16px;
       margin-top: 10px;
@@ -133,10 +164,11 @@
       <li>¡Listo! Cierra la pestaña cuando termines ✅</li>
     </ol>
 
-    <a class="boton" onclick="abrirModal()">👉 Abrir Excel Online</a>
+    <a class="boton" onclick="abrirModal()">
+      <span class="icono-animado">🚨</span> Abrir Excel Online
+    </a>
   </div>
 
-  <!-- Modal personalizado -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <h3>🔐 Ingresa la clave de acceso</h3>
