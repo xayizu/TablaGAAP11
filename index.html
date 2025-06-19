@@ -2,27 +2,31 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Abrir archivo Excel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso a Excel Online</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 60px 20px;
-      background-color: #f2f2f2;
+    h1 {
+      color: #b30000;
+      margin-bottom: 20px;
     }
-    h3 {
+    p.alerta {
+      font-weight: bold;
+      color: #990000;
+      background-color: #ffe5e5;
+      padding: 12px;
+      border-radius: 5px;
+      margin-bottom: 25px;
+    }
+    ol {
+      text-align: left;
+      margin: 0 auto 30px;
+      max-width: 500px;
+      padding-left: 20px;
       color: #333;
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-    p {
-      font-size: 16px;
-      color: #666;
-      margin-bottom: 30px;
     }
     a.boton {
-      background-color: #0078d4;
+      background-color: #d62828;
       color: white;
       padding: 15px 30px;
       text-decoration: none;
@@ -32,17 +36,36 @@
       transition: background-color 0.3s ease;
     }
     a.boton:hover {
-      background-color: #005a9e;
+      background-color: #a61c1c;
     }
   </style>
 </head>
 <body>
-  <h3>Haz clic para abrir el archivo en el navegador</h3>
-  <p>⚠️ Si se abre en la app de Excel, copia el enlace y pégalo en el navegador.</p>
-  <a class="boton" 
-     href="https://1drv.ms/x/c/32e9d3502dcfd875/EbU00EuM8YVFoCdpXdLEGgMBHrcqvPwSEZuF8gs0yB0AvQ?e=yn0dK6" 
-     target="_blank">
-    👉 Abrir Excel Online
-  </a>
+  <div class="bg"></div>
+  <div class="bg bg2"></div>
+  <div class="bg bg3"></div>
+
+  <div class="content">
+    <h1>🔐 Acceso al archivo</h1>
+
+    <p class="alerta">
+      ⚠️ Si al hacer clic en el botón se abre la app de Excel en tu celular, cierra la app y abre el enlace desde el navegador (Chrome o Safari).
+    </p>
+
+    <h3>📋 Instrucciones para editar tu registro:</h3>
+    <ol>
+      <li>Pulsa el botón <strong>“Abrir Excel Online”</strong>.</li>
+      <li>En el navegador, activa <strong>“Ver como sitio de escritorio”</strong>.</li>
+      <li>Ubica tu batería o grupo.</li>
+      <li>Busca tu nombre en la hoja.</li>
+      <li>Haz <strong>doble clic en la celda a la derecha</strong> de tu nombre.</li>
+      <li>Edita el contenido y <strong>escribe tu clave asignada</strong> si se solicita.</li>
+      <li>¡Listo! Cierra la pestaña cuando termines ✅</li>
+    </ol>
+
+    <a class="boton" href="https://1drv.ms/x/c/32e9d3502dcfd875/EbU00EuM8YVFoCdpXdLEGgMBHrcqvPwSEZuF8gs0yB0AvQ?e=yn0dK6" target="_blank">
+      👉 Abrir Excel Online
+    </a>
+  </div>
 </body>
 </html>
