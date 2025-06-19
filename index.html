@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Acceso a Excel Online</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: Arial, sans-serif;
+      background: transparent;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .content {
+      background-color: rgba(255, 255, 255, 0.96);
+      border-radius: 0.5em;
+      box-shadow: 0 0 12px rgba(166, 28, 28, 0.5);
+      padding: 30px 20px 40px;
+      max-width: 600px;
+      width: 100%;
+      z-index: 1;
+      text-align: center;
+    }
+
     h1 {
       color: #b30000;
       margin-bottom: 20px;
     }
+
     p.alerta {
       font-weight: bold;
       color: #990000;
@@ -18,6 +51,12 @@
       border-radius: 5px;
       margin-bottom: 25px;
     }
+
+    h3 {
+      margin-bottom: 15px;
+      color: #444;
+    }
+
     ol {
       text-align: left;
       margin: 0 auto 30px;
@@ -25,6 +64,7 @@
       padding-left: 20px;
       color: #333;
     }
+
     a.boton {
       background-color: #d62828;
       color: white;
@@ -33,10 +73,45 @@
       font-size: 18px;
       border-radius: 8px;
       display: inline-block;
+      margin-top: 20px;
       transition: background-color 0.3s ease;
     }
+
     a.boton:hover {
       background-color: #a61c1c;
+    }
+
+    /* Fondo animado rojo */
+    .bg, .bg2, .bg3 {
+      position: fixed;
+      bottom: 0;
+      left: -50%;
+      right: -50%;
+      top: 0;
+      z-index: -1;
+      opacity: .5;
+      animation: slide 3s ease-in-out infinite alternate;
+      background-image: linear-gradient(-60deg, #ffdddd 50%, #a61c1c 50%);
+    }
+
+    .bg2 {
+      animation-direction: alternate-reverse;
+      animation-duration: 4s;
+    }
+
+    .bg3 {
+      animation-duration: 5s;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(-25%); }
+      100% { transform: translateX(25%); }
+    }
+
+    @media (max-width: 480px) {
+      .content {
+        padding: 20px 15px 30px;
+      }
     }
   </style>
 </head>
@@ -47,20 +122,18 @@
 
   <div class="content">
     <h1>🔐 Acceso al archivo</h1>
-
     <p class="alerta">
-      ⚠️ Si al hacer clic en el botón se abre la app de Excel en tu celular, cierra la app y abre el enlace desde el navegador (Chrome o Safari).
+      ⚠️ Si se abre en la app de Excel móvil, cierra la app y abre el enlace desde el navegador (Chrome o Safari).
     </p>
-
     <h3>📋 Instrucciones para editar tu registro:</h3>
     <ol>
       <li>Pulsa el botón <strong>“Abrir Excel Online”</strong>.</li>
-      <li>En el navegador, activa <strong>“Ver como sitio de escritorio”</strong>.</li>
+      <li>Activa <strong>“Ver como sitio de escritorio”</strong>.</li>
       <li>Ubica tu batería o grupo.</li>
       <li>Busca tu nombre en la hoja.</li>
-      <li>Haz <strong>doble clic en la celda a la derecha</strong> de tu nombre.</li>
-      <li>Edita el contenido y <strong>escribe tu clave asignada</strong> si se solicita.</li>
-      <li>¡Listo! Cierra la pestaña cuando termines ✅</li>
+      <li>Haz <strong>doble clic</strong> en la celda derecha de tu nombre.</li>
+      <li>Edita tu información y <strong>escribe tu clave</strong> si se solicita.</li>
+      <li>✅ Cierra la pestaña cuando termines.</li>
     </ol>
 
     <a class="boton" href="https://1drv.ms/x/c/32e9d3502dcfd875/EbU00EuM8YVFoCdpXdLEGgMBHrcqvPwSEZuF8gs0yB0AvQ?e=yn0dK6" target="_blank">
