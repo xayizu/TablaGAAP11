@@ -11,33 +11,40 @@ html, body {
   overflow-y: auto; /* Permite scroll vertical si se desborda */
 }
 
-/* === FONDO ANIMADO CON GRADIENTES DESLIZANTES === */
+
+
+/* === 🌈 FONDO ANIMADO CON GRADIENTES DESLIZANTES === */
 .bg {
-  position: fixed; /* Fijo al viewport */
+  position: fixed; /* 🔒 El fondo permanece fijo mientras haces scroll */
   top: 0;
-  left: -50%; /* Se extiende más allá del viewport para el efecto de desplazamiento */
-  right: -50%;
+  left: -50%;        /* 🔁 Se extiende más allá del borde izquierdo */
+  right: -50%;       /* 🔁 También se extiende a la derecha para permitir movimiento suave */
   bottom: 0;
-  z-index: -1; /* Detrás del contenido */
-  opacity: 0.6;
+  z-index: -1;       /* 🔽 Lo envía detrás de todo el contenido visible */
+  opacity: 0.6;      /* 🌫️ Semitransparente para no robar atención al contenido */
   background-image: linear-gradient(-60deg, #ffffff 50%, #970000 50%);
-  animation: slide 3s ease-in-out infinite alternate;
+  animation: slide 3s ease-in-out infinite alternate; /* 🎞️ Animación infinita suave ida y vuelta */
+  filter: blur(3px); /* 💫 Desenfoque ligero que da un toque moderno y sutil */
 }
 
-/* Variaciones del fondo para animaciones independientes */
+/* === 🎭 SEGUNDAS CAPAS DE ANIMACIÓN PARA MÁS PROFUNDIDAD === */
 .bg2 {
-  animation-direction: alternate-reverse;
-  animation-duration: 4s;
-}
-.bg3 {
-  animation-duration: 5s;
+  animation-direction: alternate-reverse; /* 🔄 Movimiento inverso al original */
+  animation-duration: 4s;                /* ⏱️ Duración diferente para desfasar */
 }
 
-/* Animación del fondo (movimiento horizontal) */
-@keyframes slide {
-  0% { transform: translateX(-25%); }
-  100% { transform: translateX(25%); }
+.bg3 {
+  animation-duration: 5s; /* ⏱️ Más lenta que la principal, crea profundidad visual */
 }
+
+/* === 🎬 ANIMACIÓN DE MOVIMIENTO HORIZONTAL DEL FONDO === */
+@keyframes slide {
+  0%   { transform: translateX(-25%); } /* ⬅️ Inicia desde la izquierda */
+  100% { transform: translateX(25%); }  /* ➡️ Se mueve hacia la derecha */
+}
+
+
+
 
 /* === CONTENEDOR PRINCIPAL === */
 .content {
@@ -51,12 +58,16 @@ html, body {
   text-align: center; /* Texto centrado */
 }
 
+
+
 /* === ENCABEZADO PRINCIPAL === */
 h1 {
   color: #b30000;
   margin-bottom: 20px;
   font-size: 24px;
 }
+
+
 
 /* === MENSAJE DE ALERTA === */
 p.alerta {
@@ -68,6 +79,8 @@ p.alerta {
   font-size: 16px;
 }
 
+
+
 /* === LISTA DE INSTRUCCIONES === */
 ol {
   text-align: left;
@@ -77,6 +90,8 @@ ol {
   color: #333;
   font-size: 15px;
 }
+
+
 
 /* === BOTONES Y ENLACES === */
 a.boton, .modal-botones button {
@@ -111,12 +126,14 @@ a.boton:hover, .modal-botones button:hover {
   50% { opacity: 0.4; }
 }
 
+
+
 /* === IMAGEN ILUSTRATIVA ANIMADA === */
 .imagen-animada {
-  width: 100%;
-  max-width: 200px;
+  width:100%;
+  max-width: 150px;
   height: auto;
-  margin: 20px auto;
+  margin: 10px auto;
   display: block;
   border-radius: 10px;
   animation: zoomInOut 3s ease-in-out infinite;
@@ -125,6 +142,9 @@ a.boton:hover, .modal-botones button:hover {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
+
+
+
 
 /* === MODAL (VENTANA EMERGENTE) === */
 .modal {
@@ -138,6 +158,9 @@ a.boton:hover, .modal-botones button:hover {
   justify-content: center;
   align-items: center;
 }
+
+
+
 
 /* === CONTENIDO DEL MODAL === */
 .modal-content {
@@ -210,30 +233,52 @@ a.boton:hover, .modal-botones button:hover {
     padding: 10px 20px;
   }
 }
+/* 🧱 Contenedor que evita desbordes en móviles */
+.contenedor-titulo {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;   /* Evita que se salga en móviles */
+  padding: 0 10px;
+  box-sizing: border-box;
+  text-align: center; /* Centra el título */
+}
 
-/* Estilo del título animado */
+/* ✏️ Estilo del título animado (máquina de escribir) */
 .animacion-titulo {
-  font-size: clamp(42px, 5vw, 32px); /* Ajuste responsivo */
-  font-weight: normal;
+  display: inline-block;
+  font-size: clamp(22px, 5vw, 32px); /* Ajuste responsivo */
+  font-weight: bold;
   color: #b30000;
-  font-family: 'Squada One', sans-serif; /* O tu fuente personalizada */
+  font-family: 'Squada One', sans-serif; /* Estilo militar robusto */
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid #b30000;
+  border-right: 3px solid #b30000; /* Cursor parpadeante */
   width: 0;
   animation: escribir 3s steps(30, end) forwards, parpadeo-cursor 0.7s step-end infinite;
 }
 
-/* Animación de escritura */
+/* 🖋️ Animación de escritura mejorada */
 @keyframes escribir {
-  from { width: 0; }
-  to { width: 100%; }
+  0%   { width: 0; }
+  5%   { width: 5%; }
+  10%  { width: 10%; }
+  20%  { width: 20%; }
+  30%  { width: 30%; }
+  40%  { width: 40%; }
+  50%  { width: 50%; }
+  60%  { width: 60%; }
+  70%  { width: 70%; }
+  80%  { width: 80%; }
+  90%  { width: 90%; }
+  100% { width: 100%; }
 }
 
-/* Animación de cursor parpadeante */
+/* ✨ Parpadeo del cursor más realista */
 @keyframes parpadeo-cursor {
-  0%, 100% { border-color: transparent; }
-  50% { border-color: #b30000; }
+  0%   { border-color: transparent; }
+  49%  { border-color: transparent; }
+  50%  { border-color: #b30000; }
+  100% { border-color: #b30000; }
 }
-
-
+ 
+ 
