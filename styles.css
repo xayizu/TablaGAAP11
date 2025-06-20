@@ -13,36 +13,53 @@ html, body {
 
 
 
-/* === 🌈 FONDO ANIMADO CON GRADIENTES DESLIZANTES === */
+/* === 🌈 FONDO 1: DEGRADADO ROJO === */
 .bg {
-  position: fixed; /* 🔒 El fondo permanece fijo mientras haces scroll */
+  position: fixed;
   top: 0;
-  left: -50%;        /* 🔁 Se extiende más allá del borde izquierdo */
-  right: -50%;       /* 🔁 También se extiende a la derecha para permitir movimiento suave */
+  left: -50%;
+  right: -50%;
   bottom: 0;
-  z-index: -1;       /* 🔽 Lo envía detrás de todo el contenido visible */
-  opacity: 0.6;      /* 🌫️ Semitransparente para no robar atención al contenido */
-  background-image: linear-gradient(-60deg, #ffffff 50%, #970000 50%);
-  animation: slide 3s ease-in-out infinite alternate; /* 🎞️ Animación infinita suave ida y vuelta */
-  filter: blur(3px); /* 💫 Desenfoque ligero que da un toque moderno y sutil */
+  z-index: -1;
+  opacity: 0.6;
+  background-image: linear-gradient(-60deg, #ffffff00 50%, #b60000 50%); /* 🔴 Rojo */
+  animation: slide 3s ease-in-out infinite alternate;
+  filter: blur(3px);
 }
 
-/* === 🎭 SEGUNDAS CAPAS DE ANIMACIÓN PARA MÁS PROFUNDIDAD === */
+/* === ⚫ FONDO 2: DEGRADADO NEGRO === */
 .bg2 {
-  animation-direction: alternate-reverse; /* 🔄 Movimiento inverso al original */
-  animation-duration: 4s;                /* ⏱️ Duración diferente para desfasar */
+  position: fixed;
+  top: 0;
+  left: -50%;
+  right: -50%;
+  bottom: 0;
+  z-index: -2;
+  opacity: 0.6;
+  background-image: linear-gradient(-60deg, #ffffff00 50%, #000000 50%); /* ⚫ Negro */
+  animation: slide 4s ease-in-out infinite alternate-reverse;
+  filter: blur(3px);
 }
 
+/* === ⚪ FONDO 3: DEGRADADO GRIS === */
 .bg3 {
-  animation-duration: 5s; /* ⏱️ Más lenta que la principal, crea profundidad visual */
+  position: fixed;
+  top: 0;
+  left: -50%;
+  right: -50%;
+  bottom: 0;
+  z-index: -3;
+  opacity: 0.6;
+  background-image: linear-gradient(-60deg, #ffffff00 50%, #ff0000 50%); /* ⚪ Gris */
+  animation: slide 5s ease-in-out infinite alternate;
+  filter: blur(3px);
 }
 
-/* === 🎬 ANIMACIÓN DE MOVIMIENTO HORIZONTAL DEL FONDO === */
+/* === 🎬 ANIMACIÓN DE MOVIMIENTO DIAGONAL === */
 @keyframes slide {
-  0%   { transform: translateX(-25%); } /* ⬅️ Inicia desde la izquierda */
-  100% { transform: translateX(25%); }  /* ➡️ Se mueve hacia la derecha */
+  0%   { transform: translateX(-25%); }
+  100% { transform: translateX(25%); }
 }
-
 
 
 
