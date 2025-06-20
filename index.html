@@ -1,30 +1,46 @@
 <!DOCTYPE html>
+<!-- Declaración del tipo de documento: HTML5 -->
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <!-- Codificación de caracteres: UTF-8 permite caracteres especiales como tildes -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Hace que la página sea responsiva en móviles (escala adecuada) -->
   <title>Acceso a Excel Online</title>
+  <!-- Título que aparece en la pestaña del navegador -->
+
+  <!-- Enlace a hoja de estilos externa (CSS) -->
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+  <!-- Fondo animado: 3 capas para efecto de movimiento cruzado -->
   <div class="bg"></div>
   <div class="bg bg2"></div>
   <div class="bg bg3"></div>
 
-  
+  <!-- Contenedor principal del contenido central -->
   <div class="content" style="font-family: Arial, sans-serif;">
-
+    
+    <!-- Imagen decorativa superior con animación -->
     <img 
-        src="imagen/para web.webp" 
-         alt="Imagen ilustrativa" 
-         class="imagen-animada">
+      src="imagen/para web.webp" 
+      alt="Imagen ilustrativa" 
+      class="imagen-animada"
+    >
+
+    <!-- Título principal -->
+<h1 class="animacion-titulo">TABLA DE PARTE ONLINE</h1>
 
 
-    <h1> TABLA DE PARTE ONLINE </h1>
+    <!-- Párrafo de advertencia con fondo rojo claro -->
     <p class="alerta">
-       Este enlace proporciona acceso al excel online para el registro y seguimiento de novedades del personal militar. Su uso adecuado es obligatorio y garantiza una gestión disciplinada y transparente dentro de la unidad.<br><strong>Acceda únicamente si cuenta con autorización.</strong>
+      Este enlace proporciona acceso al excel online para el registro y seguimiento de novedades del personal militar. 
+      Su uso adecuado es obligatorio y garantiza una gestión disciplinada y transparente dentro de la unidad.<br>
+      <strong>Acceda únicamente si cuenta con autorización.</strong>
     </p>
- 
+
+    <!-- Instrucciones numeradas para el usuario -->
     <h3>📋 Instrucciones para editar tu registro:</h3>
     <ol>
       <li>Pulsa el botón <strong>“ENTRAR”</strong>.</li>
@@ -32,25 +48,39 @@
       <li>Ubica la pestaña de tu batería.</li>
       <li>Busca tu nombre en la hoja.</li>
       <li>Haz <strong>doble clic en la celda a la derecha</strong> de tu nombre.</li>
-      <li> <strong>Escribe tu clave asignada</strong> y edita el contenido.</li>
+      <li><strong>Escribe tu clave asignada</strong> y edita el contenido.</li>
       <li>¡Listo! Cierra la pestaña cuando termines ✅</li>
     </ol>
 
+    <!-- Botón de acceso: abre el modal para ingresar clave -->
     <a class="boton" href="#" onclick="abrirModal()">
       <span class="icono-animado">🔒</span> ENTRAR
     </a>
   </div>
 
+  <!-- MODAL: ventana emergente para ingresar la clave -->
   <div id="modal" class="modal" style="font-family: Arial, sans-serif;"> 
     <div class="modal-content">
+      <!-- Título del modal -->
       <h3>🔐 Ingresa la clave de acceso</h3>
-      <input type="password" id="claveInput" placeholder="Escribe tu clave..." onkeypress="if(event.key==='Enter'){verificarClave()}" />
+
+      <!-- Input de tipo contraseña -->
+      <input 
+        type="password" 
+        id="claveInput" 
+        placeholder="Escribe tu clave..." 
+        onkeypress="if(event.key==='Enter'){verificarClave()}"
+      />
+
+      <!-- Botones de acción: aceptar o cancelar -->
       <div class="modal-botones">
         <button onclick="verificarClave()">Aceptar</button>
         <button onclick="cerrarModal()">Cancelar</button>
       </div>
     </div>
   </div>
-<script src="script.js"></script>
+
+  <!-- Enlace al archivo JavaScript externo -->
+  <script src="script.js"></script>
 </body>
 </html>
